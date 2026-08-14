@@ -1,0 +1,13 @@
+# Out-of-source build trees. Every preset in CMakePresets.json writes to one of
+# these; none of it belongs in the repository.
+build/
+build-*/
+
+__pycache__/
+*.pyc
+
+# Developer-facing parity harnesses. They need the live Python oracle, that
+# oracle's environment, and absolute paths to the source package's fixtures, so
+# they cannot pass from a clone and they are not part of the released package.
+# `ctest` here registers only the self-contained cases, and passes without them.
+validation/

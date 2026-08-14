@@ -1,0 +1,71 @@
+{
+  "version": 3,
+  "configurePresets": [
+    {
+      "name": "default",
+      "displayName": "Default build (what 8_port's gate configures)",
+      "binaryDir": "${sourceDir}/build",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "RelWithDebInfo",
+        "UMI_TOOLS_BUILD_CLI": "ON"
+      }
+    },
+    {
+      "name": "asan",
+      "displayName": "AddressSanitizer + UBSan (step 9_sanitize)",
+      "binaryDir": "${sourceDir}/build-asan",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "CMAKE_CXX_FLAGS": "-fsanitize=address,undefined -fno-omit-frame-pointer -g -ftrivial-auto-var-init=pattern",
+        "UMI_TOOLS_BUILD_CLI": "ON"
+      }
+    },
+    {
+      "name": "asan-opt",
+      "displayName": "ASan/UBSan at the SHIPPED optimisation level",
+      "binaryDir": "${sourceDir}/build-asan-opt",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "RelWithDebInfo",
+        "CMAKE_CXX_FLAGS": "-fsanitize=address,undefined -fno-omit-frame-pointer -g -ftrivial-auto-var-init=pattern",
+        "UMI_TOOLS_BUILD_CLI": "ON"
+      }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "default",
+      "configurePreset": "default"
+    },
+    {
+      "name": "asan",
+      "configurePreset": "asan"
+    },
+    {
+      "name": "asan-opt",
+      "configurePreset": "asan-opt"
+    }
+  ],
+  "testPresets": [
+    {
+      "name": "default",
+      "configurePreset": "default",
+      "output": {
+        "outputOnFailure": true
+      }
+    },
+    {
+      "name": "asan",
+      "configurePreset": "asan",
+      "output": {
+        "outputOnFailure": true
+      }
+    },
+    {
+      "name": "asan-opt",
+      "configurePreset": "asan-opt",
+      "output": {
+        "outputOnFailure": true
+      }
+    }
+  ]
+}

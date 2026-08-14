@@ -1,0 +1,22 @@
+# Doxygen configuration for umi_tools-cpp.
+#
+# The public API lives entirely in include/umi_tools/. Comments use /// for
+# preceding docs and ///< for trailing member docs; both were converted from the
+# port's existing prose comments in step 13, so the DOCUMENTATION IS THE PORT'S
+# OWN NOTES rather than a generated restatement of the signatures.
+PROJECT_NAME           = "umi_tools-cpp"
+PROJECT_BRIEF          = "C++ port of umi_tools, validated against the live Python"
+OUTPUT_DIRECTORY       = docs
+INPUT                  = include/umi_tools README.md
+USE_MDFILE_AS_MAINPAGE = README.md
+FILE_PATTERNS          = *.hpp *.md
+RECURSIVE              = YES
+EXTRACT_ALL            = YES
+EXTRACT_STATIC         = YES
+JAVADOC_AUTOBRIEF      = YES
+MULTILINE_CPP_IS_BRIEF = NO
+GENERATE_LATEX         = NO
+GENERATE_HTML          = YES
+QUIET                  = YES
+WARN_IF_UNDOCUMENTED   = YES
+WARN_NO_PARAMDOC       = NO

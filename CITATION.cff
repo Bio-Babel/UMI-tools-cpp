@@ -1,0 +1,30 @@
+cff-version: 1.2.0
+message: >-
+  This is a C++ port. Please cite the ORIGINAL UMI-tools paper — the science and
+  the algorithms are the work of its authors, not of this reimplementation.
+title: "umi_tools-cpp: a validated C++ port of UMI-tools"
+type: software
+abstract: >-
+  A C++ reimplementation of UMI-tools, validated unit by unit against the live
+  Python implementation. Produced with substantial AI assistance; see the
+  README's disclosure section for the evidence and the Limitations section for the
+  enumerated deviations.
+references:
+  - type: article
+    title: >-
+      UMI-tools: modeling sequencing errors in Unique Molecular Identifiers to
+      improve quantification accuracy
+    authors:
+      - family-names: Smith
+        given-names: Tom
+      - family-names: Heger
+        given-names: Andreas
+      - family-names: Sudbery
+        given-names: Ian
+    journal: Genome Research
+    year: 2017
+    volume: 27
+    issue: 3
+    start: 491
+    end: 499
+    doi: 10.1101/gr.209601.116
